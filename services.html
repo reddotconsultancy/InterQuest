@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="Logo Files/favicon.svg">
+<link rel="alternate icon" type="image/png" href="Logo Files/favicon.png">
+<title>Our Services | InterQuest Travel and Events LLP</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #de1c28;
+    --navy: #072453;
+    --white: #ffffff;
+    --light-gray: #F6F7FA;
+    --mid-gray: #E8EAF0;
+    --text: #072453;
+    --muted: #6B7280;
+    --border: #E2E5EC;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:focus, button:focus {
+    outline: none !important;
+    text-decoration: none !important;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    height: 154px; /* Zoomed in by 200% */
+    margin: -53px 0; /* Compensate vertical spacing in navbar */
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+
+  .logo:hover img {
+    opacity: 0.85;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--red);
+    border-bottom: 2px solid var(--red);
+  }
+
+  .nav-links a.active {
+    color: var(--red);
+    font-weight: 600;
+    border-bottom: 2px solid var(--red);
+  }
+
+  .nav-links a.nav-cta {
+    display: inline-block;
+    background: var(--red);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    border-bottom: none !important;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .nav-links a.nav-cta:hover {
+    background: #b3121b !important;
+    color: white !important;
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ─── */
+  .services-hero {
+    position: relative;
+    min-height: 320px;
+    background: var(--navy);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+  }
+
+  .services-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .services-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+  }
+
+  .services-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .services-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .services-hero p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ─── SERVICE DETAILED SECTIONS ─── */
+  .service-section {
+    padding: 80px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-section:nth-child(even) {
+    background: var(--light-gray);
+  }
+
+  .service-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-header {
+    margin-bottom: 40px;
+  }
+
+  .service-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 700px;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .detail-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .detail-card:hover {
+    border-color: rgba(222,28,40,0.35);
+    box-shadow: 0 6px 24px rgba(222,28,40,0.07);
+    transform: translateY(-3px);
+  }
+
+  .detail-card h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .detail-card h5::before {
+    content: "→";
+    color: var(--red);
+    font-weight: bold;
+  }
+
+  .detail-card p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid var(--red);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background: #b3121b;
+    border-color: #b3121b;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--navy);
+    padding: 13px 22px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid var(--navy);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background: var(--light-gray);
+    transform: translateY(-1px);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    color: white;
+    padding: 64px 48px 32px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 320px 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer-col h5 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-logo-white {
+    height: 128px; /* Zoomed in by 200% */
+    margin: -44px 0; /* Compensate vertical spacing in footer brand */
+  }
+
+  .footer-logo-white img {
+    height: 100%;
+    width: auto;
+  }
+
+  /* ─── MOBILE TOGGLE BUTTON ─── */
+  .mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--navy);
+    z-index: 110;
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-nav-toggle svg {
+    display: block;
+  }
+
+  .mobile-nav-toggle line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-nav-toggle.active {
+    transform: rotate(90deg);
+  }
+
+  .mobile-nav-toggle.active .line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+    transform-origin: center;
+  }
+  .mobile-nav-toggle.active .line-2 {
+    opacity: 0;
+  }
+  .mobile-nav-toggle.active .line-3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transform-origin: center;
+  }
+
+  /* ─── RESPONSIVE MEDIA QUERIES ─── */
+  @media (max-width: 1024px) {
+    .service-section {
+      padding: 56px 32px;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 0 24px;
+    }
+
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 68px);
+      background: var(--white);
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 28px;
+      padding: 48px 24px;
+      z-index: 105;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      overflow-y: auto;
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-links a {
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .nav-links a.nav-cta {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      margin: 8px auto 0;
+    }
+
+    footer {
+      padding: 48px 24px 24px;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+      padding-top: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      padding: 0 16px;
+    }
+
+    .logo {
+      height: 122px; /* Increased by a further 60% */
+      margin: -42px 0; /* Compensate vertical spacing on mobile */
+    }
+
+    .logo img {
+      height: 100%;
+      width: auto;
+    }
+
+    .service-section {
+      padding: 40px 16px;
+    }
+
+    .service-title {
+      font-size: 26px;
+    }
+
+    .footer-top {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-social {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="index.html">
+    <img src="Logo Files/logo_header.svg" alt="InterQuest Travel and Events LLP">
+  </a>
+  <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line class="line-1" x1="3" y1="12" x2="21" y2="12"></line>
+      <line class="line-2" x1="3" y1="6" x2="21" y2="6"></line>
+      <line class="line-3" x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Talk to Us</a></li>
+  </ul>
+</nav>
+
+<!-- SERVICES HERO -->
+<section class="services-hero">
+  <div class="services-hero-bg">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80" alt="Detailed global business services background">
+  </div>
+  <div class="services-hero-content">
+    <h1>Our Specialized Services</h1>
+    <p>We provide comprehensive travel coordination, event execution, and MICE solutions tailored for corporates, embassies, business delegations, and global experiences.</p>
+  </div>
+</section>
+
+<!-- SERVICES SECTIONS -->
+
+<!-- 1. Travel Solutions -->
+<section class="service-section" id="travel-solutions">
+  <div class="service-container">
+    <div class="service-header">
+      <span class="service-eyebrow">GLOBAL MOBILITY & LOGISTICS</span>
+      <h2 class="service-title">Travel Solutions</h2>
+      <p class="service-desc">Customized journeys and seamless logistics for modern organizations, business delegates, and experiential tours.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10"/><path d="M3 12h18"/><path d="M7 8v4"/><path d="M17 8v4"/><path d="M3 17h18"/></svg>
+          Hotel Reservations
+        </h5>
+        <p>Domestic and international hotel bookings facilitated through carefully selected hospitality partners.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Air Ticketing
+        </h5>
+        <p>Domestic and international flight bookings, complemented by flexible travel support.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Transport Management
+        </h5>
+        <p>Comprehensive vehicle arrangements, including airport transfers, business travel logistics, group transportation, and general logistics support.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          Tour Packages
+        </h5>
+        <p>Customized leisure, group, incentive, and experiential travel programs.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Guide & Local Assistance
+        </h5>
+        <p>Professional destination support and expertly guided experiences.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          VISA Support Services
+        </h5>
+        <p>Assistance with documentation and comprehensive travel planning.</p>
+      </div>
+      <div class="detail-card" style="grid-column: span 2;">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Corporate Travel Management
+        </h5>
+        <p>End-to-end planning and execution of business travel, optimized for corporate efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Events & Corporate Solutions -->
+<section class="service-section" id="events-solutions">
+  <div class="service-container">
+    <div class="service-header">
+      <span class="service-eyebrow">HIGH-IMPACT EXPERIENCES</span>
+      <h2 class="service-title">Events & Corporate Solutions</h2>
+      <p class="service-desc">Robust coordination, technical production, and protocol alignment for corporate and diplomatic gatherings.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Conferences & Meetings
+        </h5>
+        <p>Full-service planning and execution for conferences, meetings, and business gatherings.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Corporate Events
+        </h5>
+        <p>Professional management of product launches, celebrations, networking events, and employee engagement activities.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Audio Visual Setup
+        </h5>
+        <p>Technical support encompassing sound, display, presentation, and comprehensive event production solutions.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          MICE Solutions
+        </h5>
+        <p>Specialized services for Meetings, Incentives, Conferences, and Exhibitions.</p>
+      </div>
+      <div class="detail-card" style="grid-column: span 2;">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Event Production & Coordination
+        </h5>
+        <p>Comprehensive support for venue management, logistics, registration, branding, and onsite execution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="service-section" id="contact" style="background: var(--light-gray); text-align: center; padding: 80px 24px;">
+  <div style="max-width: 700px; margin: 0 auto;">
+    <span class="service-eyebrow">GET IN TOUCH</span>
+    <h2 class="service-title" style="margin-bottom: 20px;">Let’s Build Exceptional Experiences Together</h2>
+    <p style="font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 32px;">
+      Whether you are planning corporate travel, organizing an event, hosting delegates, or executing a conference, InterQuest is ready to support you.
+    </p>
+    <div class="hero-buttons" style="justify-content: center; gap: 16px;">
+      <a href="mailto:info@interquest.in" class="btn-primary">Get In Touch</a>
+      <a href="index.html#services" class="btn-outline" style="border-color: var(--navy); color: var(--navy);">Request Proposal</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="logo footer-logo-white" href="index.html">
+        <img src="Logo Files/logo_footer.svg" alt="InterQuest Travel & Events LLP">
+      </a>
+      <p style="margin-top: 16px; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.6);">
+        Travel | Events | Experiences<br><br>
+        InterQuest Travel and Events LLP delivers seamless travel coordination, event execution, and MICE solutions through strategic planning and operational excellence.
+      </p>
+      <div class="footer-social" style="margin-top: 20px;">
+        <a class="social-icon" href="#">in</a>
+        <a class="social-icon" href="#">X</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#client-segments">Clients</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Client Segments</h5>
+      <ul>
+        <li><a href="index.html#client-segments">Corporates</a></li>
+        <li><a href="index.html#client-segments">Embassies & Missions</a></li>
+        <li><a href="index.html#client-segments">Business Delegations</a></li>
+        <li><a href="index.html#client-segments">Event Agencies</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" id="footer-contact">
+      <h5>Contact</h5>
+      <ul style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.8;">
+        <li>📧 <a href="mailto:info@interquest.in" style="color: white;">info@interquest.in</a></li>
+        <li>📞 +91 XXXXX XXXXX</li>
+        <li>📍 New Delhi, India</li>
+        <li>Let's create exceptional experiences together.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 InterQuest Travel and Events LLP. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Use</span>
+  </div>
+</footer>
+
+<script>
+  const toggleBtn = document.querySelector('.mobile-nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+        toggleBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+</script>
+</body>
+</html>

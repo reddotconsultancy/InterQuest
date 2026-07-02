@@ -143,7 +143,7 @@
   .hero {
     position: relative;
     min-height: 580px;
-    background: var(--navy);
+    background: #121212;
     overflow: hidden;
     display: flex;
     align-items: flex-start;
@@ -155,23 +155,52 @@
     z-index: 0;
   }
 
-  .hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.45;
+  .hero-bg .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroSlideshow 15s infinite;
     display: block;
+    z-index: 1;
+  }
+
+  /* Slideshow images representing: Wedding, Family Vacation, Corporate Fun */
+  .hero-bg .slide-1 {
+    background-image: url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=1600&q=80');
+    animation-delay: 0s;
+  }
+
+  .hero-bg .slide-2 {
+    background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80');
+    animation-delay: 5s;
+  }
+
+  .hero-bg .slide-3 {
+    background-image: url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1600&q=80');
+    animation-delay: 10s;
+  }
+
+  @keyframes heroSlideshow {
+    0% { opacity: 0; transform: scale(1.04); }
+    8% { opacity: 0.9; }
+    33% { opacity: 0.9; }
+    41% { opacity: 0; transform: scale(1.0); }
+    100% { opacity: 0; }
   }
 
   .hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(26,37,64,0.92) 0%, rgba(26,37,64,0.55) 45%, rgba(26,37,64,0.08) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 75%);
+    z-index: 2;
   }
 
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     padding: 80px 48px 72px 56px;
     width: 100%;
     max-width: 1100px;
@@ -459,8 +488,8 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
     max-width: 1200px;
     margin: 0 auto 36px;
   }
@@ -468,29 +497,34 @@
   .service-card {
     background: var(--white);
     border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 32px 24px 28px;
+    border-radius: 10px;
+    padding: 20px 16px;
     text-align: center;
     cursor: pointer;
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
 
   .service-card:hover {
     border-color: rgba(222,28,40,0.35);
     box-shadow: 0 6px 24px rgba(222,28,40,0.07);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 
   .service-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     background: rgba(222,28,40,0.05);
     border: 1.5px solid rgba(222,28,40,0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 16px;
+    margin: 0 auto 12px;
     transition: background 0.2s ease;
   }
 
@@ -500,29 +534,29 @@
 
   .service-icon svg {
     display: block;
+    width: 20px;
+    height: 20px;
   }
 
   .service-card h4 {
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 8px;
-    line-height: 1.4;
+    margin-bottom: 0;
+    line-height: 1.35;
+    transition: color 0.25s ease;
   }
 
   .service-card p {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-top: 6px;
+    margin-bottom: 0;
   }
 
-  .card-learn-more {
-    text-decoration: none;
-  }
-
-  .card-learn-more:hover {
-    transform: translateX(4px);
-    text-decoration: underline !important;
+  .service-card:hover h4 {
+    color: var(--red);
   }
 
   .view-all-wrap {
@@ -724,14 +758,14 @@
   .why-image {
     border-radius: 16px;
     overflow: hidden;
-    height: 420px;
     position: relative;
   }
 
   .why-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
+    object-fit: contain;
   }
 
   .why-badge {
@@ -811,7 +845,8 @@
 
   /* ─── STATS ─── */
   .stats-section {
-    background: linear-gradient(135deg, #072133 0%, #072453 50%, #061F2E 100%);
+    background: linear-gradient(135deg, rgba(7, 33, 51, 0.9) 0%, rgba(6, 36, 64, 0.9) 100%), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80') no-repeat center center;
+    background-size: cover;
     padding: 72px 64px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1371,16 +1406,18 @@
 <section class="hero" id="home">
   <!-- Full-width background image -->
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80" alt="Global network connectivity and business flight overlay">
+    <div class="slide slide-1"></div>
+    <div class="slide slide-2"></div>
+    <div class="slide slide-3"></div>
     <div class="hero-bg-overlay"></div>
   </div>
 
   <!-- Left text content -->
   <div class="hero-content">
-    <div class="hero-eyebrow"><span>Curated Travel & Event Experiences</span></div>
-    <p class="hero-eyebrow-sub" style="margin-bottom: 24px;">Integrated Travel & Event Management Solutions</p>
-    <h1>Solutions for Corporates, Embassies & Business Delegations</h1>
-    <p class="hero-sub">InterQuest Travel and Events LLP delivers seamless travel coordination, event execution, and MICE solutions through strategic planning, operational excellence, and personalized service.</p>
+    <div class="hero-eyebrow"><span>Curating Joyful Journeys & Corporate Success</span></div>
+    <p class="hero-eyebrow-sub" style="margin-bottom: 24px;">Bespoke Travel, Happy Holidays & Flawless Corporate Events</p>
+    <h1>Joyful Journeys for Families, Corporates & Embassies</h1>
+    <p class="hero-sub">We blend the joy of personalized travel and holiday planning with the precision of corporate and embassy event management. Whether it's a dream vacation, a destination wedding, or a high-profile business summit, we handle the details so you can focus on the experience.</p>
     <div class="hero-buttons">
       <a href="#contact" class="btn-primary">Talk to Us →</a>
       <a href="#services" class="btn-outline">Explore Services</a>
@@ -1392,19 +1429,19 @@
 <section class="section why-section" id="about-us">
   <div class="why-layout">
     <div class="why-image">
-      <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80" alt="Professional team meeting and corporate event collaboration">
+      <img src="dolomites.jpg" alt="Breathtaking Dolomites mountain peaks with green slopes and a blue sky">
     </div>
     <div>
-      <div class="section-eyebrow">Your Trusted Partner for Travel, Events & Business Experiences</div>
+      <div class="section-eyebrow">Your Trusted Partner for Memorable Journeys & Unique Experiences</div>
       <h2 class="section-title">Who We Are</h2>
       <p class="section-sub" style="max-width: 100%; margin-bottom: 20px; font-weight: 500; font-size: 15px; color: var(--navy);">
-        InterQuest Travel and Events LLP is a professionally managed travel and event management company specializing in Corporate Events, Embassy Events, Business Delegations, Business Travel, and MICE solutions.
+        InterQuest Travel and Events LLP is a premier travel management company dedicated to curating joyful holidays, luxury destination weddings, and seamless corporate experiences. We help travelers explore the world with absolute ease, happiness, and peace of mind.
       </p>
       <p style="font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 20px;">
-        Built on years of industry experience and strong execution capability, we help organizations simplify travel and event operations through reliable planning, responsive service, and end-to-end delivery.
+        With years of industry expertise and a strong global hospitality network, we simplify travel and group logistics. From custom-crafted leisure tours for families to highly coordinated corporate retreats, we deliver responsive service and end-to-end support.
       </p>
       <p style="font-size: 14px; line-height: 1.7; color: var(--muted); margin-bottom: 32px;">
-        From executive travel to international delegations and large-scale business events, we create experiences that are efficient, professional, and memorable.
+        Whether you are planning a dream family vacation, organizing a beautiful destination wedding, or managing executive business travel, we design journeys and events that are inspiring, stress-free, and unforgettable.
       </p>
       <div>
         <a href="about.html" class="btn-primary">Learn More</a>
@@ -1420,66 +1457,77 @@
     <h2 class="section-title">Comprehensive Solutions. One Reliable Partner.</h2>
   </div>
   <div class="services-grid">
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <h4>Corporate Events</h4>
-        <p style="margin-bottom: 0;">Professional planning and execution for conferences, product launches, networking events, annual meetings, and business gatherings.</p>
+    <!-- 1. Hotel Bookings -->
+    <a href="services.html#logistics-mobility" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10"/><path d="M3 12h18"/><path d="M7 8v4"/><path d="M17 8v4"/><path d="M3 17h18"/></svg>
       </div>
-      <a href="services.html#corporate-events" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <h4>Embassy & Diplomatic Events</h4>
-        <p style="margin-bottom: 0;">Specialized support for embassy functions, diplomatic receptions, and protocol-sensitive events.</p>
+      <h4>Hotel Bookings</h4>
+      <p>Premium domestic and international hotel stays.</p>
+    </a>
+
+    <!-- 2. Events -->
+    <a href="services.html#corporate-business-travel" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </div>
-      <a href="services.html#embassy-events" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        </div>
-        <h4>Business Delegations</h4>
-        <p style="margin-bottom: 0;">Complete management for domestic and international delegations.</p>
+      <h4>Events Management</h4>
+      <p>Seamless execution for corporate and embassy functions.</p>
+    </a>
+
+    <!-- 3. Air Tickets -->
+    <a href="services.html#logistics-mobility" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
       </div>
-      <a href="services.html#business-delegations" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h4>MICE Solutions</h4>
-        <p style="margin-bottom: 0;">Meetings • Incentives • Conferences • Exhibitions. End-to-end management for corporate gatherings and business experiences.</p>
+      <h4>Air Tickets</h4>
+      <p>Global flight bookings and ticketing support.</p>
+    </a>
+
+    <!-- 4. Holiday Packages -->
+    <a href="services.html#leisure-tours-personal" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
       </div>
-      <a href="services.html#mice-solutions" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-        </div>
-        <h4>Corporate Travel</h4>
-        <p style="margin-bottom: 0;">Reliable travel solutions designed for modern businesses.</p>
+      <h4>Holiday Packages</h4>
+      <p>Tailored vacations and custom leisure itineraries.</p>
+    </a>
+
+    <!-- 5. Transport -->
+    <a href="services.html#logistics-mobility" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
       </div>
-      <a href="services.html#corporate-travel" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
-    <div class="service-card" style="display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 280px; padding: 32px 24px;">
-      <div>
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-        </div>
-        <h4>Event Production</h4>
-        <p style="margin-bottom: 0;">Creating experiences through seamless execution.</p>
+      <h4>Transport Support</h4>
+      <p>Airport transfers and executive car rentals.</p>
+    </a>
+
+    <!-- 6. Business Travel -->
+    <a href="services.html#corporate-business-travel" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
-      <a href="services.html#event-production" style="margin-top: 16px; display: inline-block; font-size: 13px; font-weight: 600; color: var(--red); transition: transform 0.2s ease;" class="card-learn-more">Learn More →</a>
-    </div>
+      <h4>Business Travel</h4>
+      <p>Optimized flight routes and corporate travel accounts.</p>
+    </a>
+
+    <!-- 7. Embassy Delegation -->
+    <a href="services.html#corporate-business-travel" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 1 0 10 10m-2-3l-4 4-2-2"/></svg>
+      </div>
+      <h4>Embassy Delegation</h4>
+      <p>Protocol-compliant transport and mission coordination.</p>
+    </a>
+
+    <!-- 8. Weddings -->
+    <a href="services.html#leisure-tours-personal" class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><circle cx="12" cy="16" r="5"/><path d="M12 3a9 9 0 0 1 0 18"/></svg>
+      </div>
+      <h4>Weddings & Social</h4>
+      <p>Bespoke destination wedding planning and guest support.</p>
+    </a>
   </div>
   <div class="view-all-wrap">
     <a href="services.html" class="view-all">View All Services →</a>
@@ -1491,7 +1539,7 @@
 <section class="why-section" id="why-us">
   <div class="why-layout">
     <div class="why-image">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Modern corporate skyscraper representing operational excellence and leadership">
+      <img src="wedding_setup.jpg" alt="Premium outdoor destination wedding setup on a sandy beach with a red carpet and flower arch">
     </div>
     <div>
       <div class="section-eyebrow">Experience That Delivers Results</div>
@@ -1535,8 +1583,7 @@
   </div>
 </section>
 
-<!-- HOW WE WORK -->
-<section class="stats-section" id="how-we-work" style="background: linear-gradient(135deg, #072453 0%, #0c3574 50%, #031433 100%);">
+<section class="stats-section" id="how-we-work">
   <div class="stat" style="text-align: left; padding: 24px;">
     <div class="stat-number" style="font-size: 48px;">01</div>
     <div style="color: white; font-weight: 700; font-size: 16px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Understand Requirements</div>
@@ -1623,34 +1670,34 @@
   <div class="testimonials-grid">
     <div class="testimonial-card">
       <div class="testimonial-stars" style="color: var(--red);">★★★★★</div>
-      <p class="testimonial-text">"InterQuest managed our diplomatic summit with high sensitivity and absolute protocol alignment. The execution of hospitality for our delegates was flawless."</p>
+      <p class="testimonial-text">"InterQuest planned our beach wedding in Goa perfectly. Coordinating flights and setup for 150 guests was flawless—our families had so much fun!"</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">ED</div>
+        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">AR</div>
         <div class="testimonial-author-info">
-          <span>Embassy Delegate</span>
-          <span>Official Embassy Event</span>
+          <span>Aditi & Rahul</span>
+          <span>Goa Destination Wedding</span>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-stars" style="color: var(--red);">★★★★★</div>
-      <p class="testimonial-text">"Our business delegation to Tokyo was handled with extreme care. Airport transfers, hotel bookings, and conference logistics went off without a hitch."</p>
+      <p class="testimonial-text">"Our multi-generation family trip to Europe was incredibly smooth. The kids loved the tours and we all had a wonderful, stress-free vacation."</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">CM</div>
+        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">PS</div>
         <div class="testimonial-author-info">
-          <span>Corporate Manager</span>
-          <span>International Delegation</span>
+          <span>Priya Sharma</span>
+          <span>Europe Family Tour</span>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="testimonial-stars" style="color: var(--red);">★★★★★</div>
-      <p class="testimonial-text">"An event partner you can rely on. Seamless audio visual setup, premium venue liaison, and proactive team support during our annual sales launch."</p>
+      <p class="testimonial-text">"The Rajasthan corporate retreat was the perfect mix of productive meetings and team fun, like dune safaris and themed dinners. Highly recommended!"</p>
       <div class="testimonial-author">
-        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">EL</div>
+        <div class="testimonial-avatar" style="background: rgba(222,28,40,0.1); color: var(--red);">VM</div>
         <div class="testimonial-author-info">
-          <span>Event Lead</span>
-          <span>Annual Corporate Meet</span>
+          <span>Vikram Malhotra</span>
+          <span>Corporate Retreat (HR Director)</span>
         </div>
       </div>
     </div>
@@ -1691,11 +1738,11 @@
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a href="#services">Corporate Events</a></li>
-        <li><a href="#services">Embassy Events</a></li>
-        <li><a href="#services">Business Delegations</a></li>
-        <li><a href="#services">MICE Solutions</a></li>
-        <li><a href="#services">Corporate Travel</a></li>
+        <li><a href="services.html#leisure-tours-personal">Leisure & Personal Tours</a></li>
+        <li><a href="services.html#corporate-business-travel">Corporate Travel & MICE</a></li>
+        <li><a href="services.html#corporate-business-travel">Embassy Delegations</a></li>
+        <li><a href="services.html#logistics-mobility">Global Mobility & Logistics</a></li>
+        <li><a href="services.html#leisure-tours-personal">Weddings & Social Events</a></li>
       </ul>
     </div>
     <div class="footer-col">

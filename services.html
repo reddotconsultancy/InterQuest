@@ -126,7 +126,7 @@
   .services-hero {
     position: relative;
     min-height: 320px;
-    background: var(--navy);
+    background: #121212;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -145,7 +145,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.25;
+    opacity: 0.75;
+  }
+
+  .services-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: 1;
   }
 
   .services-hero-content {
@@ -572,13 +580,95 @@
 
 <!-- SERVICES SECTIONS -->
 
-<!-- 1. Travel Solutions -->
-<section class="service-section" id="travel-solutions">
+<!-- 1. Leisure Tours & Personal Travel -->
+<section class="service-section" id="leisure-tours-personal">
   <div class="service-container">
     <div class="service-header">
-      <span class="service-eyebrow">GLOBAL MOBILITY & LOGISTICS</span>
-      <h2 class="service-title">Travel Solutions</h2>
-      <p class="service-desc">Customized journeys and seamless logistics for modern organizations, business delegates, and experiential tours.</p>
+      <span class="service-eyebrow">PERSONALIZED EXPERIENCES & LEISURE</span>
+      <h2 class="service-title">Leisure Tours & Personal Travel</h2>
+      <p class="service-desc">Tailored holiday packages, custom personal excursions, and bespoke social event management designed for families, corporate executives, and embassy staff.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          Holiday Packages & Custom Tours
+        </h5>
+        <p>Expertly curated leisure travel, custom-tailored itineraries, family vacations, and experiential tour packages within India and globally, designed to match your schedule and lifestyle.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><circle cx="12" cy="16" r="5"/><path d="M12 3a9 9 0 0 1 0 18"/></svg>
+          Weddings & Social Events
+        </h5>
+        <p>Bespoke destination wedding planning and premium private celebrations, complete with guest hospitality coordination, theme execution, design layout planning, and logistics support.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Guided Excursions & Local Assistance
+        </h5>
+        <p>Professional multilingual guides, translators, and local curators who enrich the travel experience with cultural depth and ensure hassle-free personal touring.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          Leisure & Boutique Accommodations
+        </h5>
+        <p>Access to carefully selected boutique resorts, heritage properties, and luxury retreats, coordinated with VIP hospitality extensions for personal comfort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Corporate & Business Travel -->
+<section class="service-section" id="corporate-business-travel">
+  <div class="service-container">
+    <div class="service-header">
+      <span class="service-eyebrow">ENTERPRISE SOLUTIONS & EVENTS</span>
+      <h2 class="service-title">Corporate & Business Travel</h2>
+      <p class="service-desc">Meticulous planning, strategic execution, and protocol-aligned logistics for corporate gatherings, MICE, and business travel.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Corporate Travel Management
+        </h5>
+        <p>End-to-end management of business travel accounts, flight routes optimization, corporate policy alignment, and customized reporting to optimize expenses.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          MICE Solutions
+        </h5>
+        <p>Meetings, Incentives, Conferences, and Exhibitions executed with logistical precision. Covers group hospitality, registration systems, and branding integration.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 1 0 10 10m-2-3l-4 4-2-2"/></svg>
+          Embassy Delegations & VIP Logistics
+        </h5>
+        <p>Protocol-aligned travel management, diplomatic hosting, security liaison, and specialized coordinate services for foreign missions and delegation visits.</p>
+      </div>
+      <div class="detail-card">
+        <h5>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Conferences & Meetings
+        </h5>
+        <p>A-Z coordination including venue scouting, technical sound/lighting setups, AV displays, presentation management, and onsite event coordinators.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Global Mobility & Logistics -->
+<section class="service-section" id="logistics-mobility">
+  <div class="service-container">
+    <div class="service-header">
+      <span class="service-eyebrow">SEAMLESS MOVEMENT & HOSPITALITY</span>
+      <h2 class="service-title">Global Mobility & Logistics</h2>
+      <p class="service-desc">Reliable, secure, and transactional logistics services ensuring smooth bookings, transfers, and clearances for delegations and individual travelers.</p>
     </div>
     <div class="details-grid">
       <div class="detail-card">
@@ -586,97 +676,28 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10"/><path d="M3 12h18"/><path d="M7 8v4"/><path d="M17 8v4"/><path d="M3 17h18"/></svg>
           Hotel Reservations
         </h5>
-        <p>Domestic and international hotel bookings facilitated through carefully selected hospitality partners.</p>
+        <p>Domestic and international corporate-negotiated hotel bookings with preferred partner properties, ensuring flex-rates, priority room blocks, and VIP treatment.</p>
       </div>
       <div class="detail-card">
         <h5>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           Air Ticketing
         </h5>
-        <p>Domestic and international flight bookings, complemented by flexible travel support.</p>
+        <p>Reliable commercial air ticketing, flight monitoring, re-bookings, group fare negotiations, and 24/7 dedicated travel support for business excursions.</p>
       </div>
       <div class="detail-card">
         <h5>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          Transport Management
+          Transport & Chauffeur Services
         </h5>
-        <p>Comprehensive vehicle arrangements, including airport transfers, business travel logistics, group transportation, and general logistics support.</p>
-      </div>
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-          Tour Packages
-        </h5>
-        <p>Customized leisure, group, incentive, and experiential travel programs.</p>
-      </div>
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Guide & Local Assistance
-        </h5>
-        <p>Professional destination support and expertly guided experiences.</p>
+        <p>Premium ground transfers, airport pick-ups/drops, business delegation coaches, and customized ground itineraries featuring secure, sanitised vehicles and trained drivers.</p>
       </div>
       <div class="detail-card">
         <h5>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           VISA Support Services
         </h5>
-        <p>Assistance with documentation and comprehensive travel planning.</p>
-      </div>
-      <div class="detail-card" style="grid-column: span 2;">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          Corporate Travel Management
-        </h5>
-        <p>End-to-end planning and execution of business travel, optimized for corporate efficiency.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2. Events & Corporate Solutions -->
-<section class="service-section" id="events-solutions">
-  <div class="service-container">
-    <div class="service-header">
-      <span class="service-eyebrow">HIGH-IMPACT EXPERIENCES</span>
-      <h2 class="service-title">Events & Corporate Solutions</h2>
-      <p class="service-desc">Robust coordination, technical production, and protocol alignment for corporate and diplomatic gatherings.</p>
-    </div>
-    <div class="details-grid">
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Conferences & Meetings
-        </h5>
-        <p>Full-service planning and execution for conferences, meetings, and business gatherings.</p>
-      </div>
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Corporate Events
-        </h5>
-        <p>Professional management of product launches, celebrations, networking events, and employee engagement activities.</p>
-      </div>
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          Audio Visual Setup
-        </h5>
-        <p>Technical support encompassing sound, display, presentation, and comprehensive event production solutions.</p>
-      </div>
-      <div class="detail-card">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          MICE Solutions
-        </h5>
-        <p>Specialized services for Meetings, Incentives, Conferences, and Exhibitions.</p>
-      </div>
-      <div class="detail-card" style="grid-column: span 2;">
-        <h5>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          Event Production & Coordination
-        </h5>
-        <p>Comprehensive support for venue management, logistics, registration, branding, and onsite execution.</p>
+        <p>Assistance in document verification, visa consultation, embassy submittals coordination, and airport clearances.</p>
       </div>
     </div>
   </div>
@@ -714,12 +735,13 @@
       </div>
     </div>
     <div class="footer-col">
-      <h5>Links</h5>
+      <h5>Services</h5>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#client-segments">Clients</a></li>
+        <li><a href="services.html#leisure-tours-personal">Leisure & Personal Tours</a></li>
+        <li><a href="services.html#corporate-business-travel">Corporate Travel & MICE</a></li>
+        <li><a href="services.html#corporate-business-travel">Embassy Delegations</a></li>
+        <li><a href="services.html#logistics-mobility">Global Mobility & Logistics</a></li>
+        <li><a href="services.html#leisure-tours-personal">Weddings & Social Events</a></li>
       </ul>
     </div>
     <div class="footer-col">
